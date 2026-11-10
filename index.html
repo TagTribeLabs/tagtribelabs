@@ -4,86 +4,278 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>TagTribe Labs</title>
-  <meta name="description" content="TagTribe Labs - Independent app development and digital solutions.">
+  <meta name="description" content="TagTribe Labs creates innovative community experiences, outdoor tools, and companion apps. Discover our flagship platform TagTribe.app.">
+  <title>TagTribe Labs | Explore Your Tribe</title>
 
   <style>
+    :root {
+      --background: #10151c;
+      --surface: #1b2531;
+      --border: #344354;
+      --text: #f5f7fa;
+      --muted: #b9c5d2;
+      --accent: #70c8ff;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
+      background: var(--background);
+      color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      background: #0d1117;
-      color: #ffffff;
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
     header {
+      padding: 35px 0 25px;
       text-align: center;
-      padding: 80px 20px;
-      background: #161b22;
+      border-bottom: 1px solid var(--border);
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0 0 10px;
+    .brand {
+      display: inline-block;
+      background: white;
+      color: black;
+      border: 5px solid black;
+      outline: 2px solid white;
+      border-radius: 18px;
+      padding: 8px 24px;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.2;
     }
 
-    header p {
-      font-size: 1.2rem;
-      color: #b7c0ca;
+    .tagline {
+      color: var(--muted);
+      margin-top: 22px;
+      font-size: 16px;
     }
 
     main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 50px 20px;
+      padding: 40px 0;
     }
 
-    section {
-      margin-bottom: 60px;
+    .flagship {
+      background: linear-gradient(135deg, #20364a, #16222e);
+      border: 2px solid #537b9a;
+      border-radius: 20px;
+      padding: 45px 35px;
+      text-align: center;
+      margin-bottom: 45px;
     }
 
-    h2 {
-      border-bottom: 2px solid #30363d;
-      padding-bottom: 10px;
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .flagship h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      margin: 15px 0 0;
+      line-height: 1.2;
+    }
+
+    .flagship h2 {
+      font-size: clamp(20px, 4vw, 28px);
+      margin: 12px 0;
+      font-weight: 500;
+    }
+
+    .flagship p {
+      max-width: 750px;
+      margin: 18px auto;
+      color: #d2dce6;
+      font-size: 17px;
+    }
+
+    .status {
+      display: inline-block;
+      background: #314c62;
+      color: white;
+      border: 1px solid #6a95b3;
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 22px;
+      background: white;
+      color: #14202b;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 9px;
+      padding: 12px 24px;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #d8edff;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 0;
     }
 
     .apps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
 
     .app-card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .app-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
     .app-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin: 5px 0 10px;
+      font-size: 21px;
     }
 
     .app-card p {
-      color: #b7c0ca;
-      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 18px;
     }
 
-    a {
-      color: #58a6ff;
+    .app-status {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .signup {
+      margin-top: 50px;
+      background: #202e3c;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    .signup h2 {
+      font-size: 27px;
+      margin: 0 0 10px;
+    }
+
+    .signup p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      color: var(--muted);
+    }
+
+    .signup form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .signup input {
+      width: min(100%, 350px);
+      padding: 13px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #718195;
+      background: white;
+      color: #111;
+    }
+
+    .signup button {
+      background: #70c8ff;
+      color: #10151c;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 23px;
+      cursor: pointer;
+    }
+
+    .signup button:hover {
+      background: #a5ddff;
+    }
+
+    .signup-note {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 14px;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #30363d;
-      color: #8b949e;
+      border-top: 1px solid var(--border);
+      padding: 28px 15px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .apps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .flagship {
+        padding: 35px 20px;
+      }
+
+      .apps {
+        grid-template-columns: 1fr;
+      }
+
+      .signup input,
+      .signup button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -91,77 +283,160 @@
 <body>
 
   <header>
-    <h1>TagTribe Labs</h1>
-    <p>Building useful apps for everyday life, exploration, and community.</p>
+    <div class="container">
+      <div class="brand">TagTribe Labs</div>
+      <p class="tagline">
+        Building Connections. Creating Experiences.
+      </p>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
 
+    <!-- FLAGSHIP PLATFORM -->
+    <section class="flagship">
+      <div class="eyebrow">Our Flagship Platform</div>
+
+      <h1>TagTribe.app</h1>
+      <h2>Explore Your Tribe.</h2>
+
+      <p>
+        A fresh kind of community platform designed
+        to bring people together through shared
+        interests, vehicles, outdoor adventures,
+        community gaming, and activities.
+      </p>
+
+      <p>
+        Discover new connections, explore communities,
+        and experience a different way to connect
+        with the people and things you enjoy.
+      </p>
+
+      <span class="status">Coming Soon</span>
+
+      <div>
+        <a class="button"
+           href="https://tagtribe.app">
+          Visit TagTribe.app
+        </a>
+      </div>
+    </section>
+
+    <!-- COMPANION APPLICATIONS -->
     <section>
-      <h2>Our Apps</h2>
+      <div class="section-heading">
+        <h2>Companion Apps</h2>
+        <p>
+          Innovative tools and everyday experiences
+          from TagTribe Labs.
+        </p>
+      </div>
 
       <div class="apps">
 
-        <div class="app-card">
-  <h3>TagTribe.App — Coming Soon</h3>
-  <p>
-    Explore Your Tribe! Discover a new community
-    experience built around shared interests,
-    connections, and real-world adventures.
-  </p>
-  <p>
-    Official TagTribe.App website coming soon. 
-  </p>
-</div>
+        <article class="app-card">
+          <div class="app-icon">🔦</div>
+          <h3>TribeTac</h3>
+          <p>
+            Practical utility tools built for
+            everyday use and outdoor adventures.
+            Starting with TribeTac-BR Torch.
+          </p>
+          <div class="app-status">In Development</div>
+        </article>
 
-        <div class="app-card">
-          <h3>TribeTac Torch</h3>
-          <p>Description coming soon.</p>
-        </div>
+        <article class="app-card">
+          <div class="app-icon">🧭</div>
+          <h3>TagTribe Rewind</h3>
+          <p>
+            Explore with confidence using
+            location breadcrumbs and
+            backtracking tools to help
+            find your way back.
+          </p>
+          <div class="app-status">In Development</div>
+        </article>
 
-        <div class="app-card">
-          <h3>TribeTac Rewind</h3>
-          <p>Description coming soon.</p>
-        </div>
-
-        <div class="app-card">
+        <article class="app-card">
+          <div class="app-icon">💧</div>
           <h3>Water Ducky</h3>
-          <p>Description coming soon.</p>
-        </div>
-
-        <div class="app-card">
-          <h3>GatherTable</h3>
-          <p>Description coming soon.</p>
-        </div>
+          <p>
+            A fun and simple way to
+            track daily hydration and
+            build healthy water-drinking habits.
+          </p>
+          <div class="app-status">In Development</div>
+        </article>
 
       </div>
     </section>
 
-    <section>
-      <h2>Support</h2>
-      <p>Support information for TagTribe Labs apps will be available here.</p>
-    </section>
+    <!-- EMAIL UPDATES -->
+    <section class="signup">
+      <h2>Be the First to Know</h2>
 
-    <section>
-      <h2>Privacy</h2>
-      <p>Privacy policies for TagTribe Labs apps will be available here.</p>
-    </section>
+      <p>
+        Join our email list for updates on
+        TagTribe.app, platform progress,
+        and new app releases from TagTribe Labs.
+      </p>
 
-    <section>
-      <h2>Terms</h2>
-      <p>Terms and conditions for TagTribe Labs products and services will be available here.</p>
-    </section>
+      <!--
+        Email signup service not yet connected.
+        Replace this form when a mailing list
+        provider has been configured.
+      -->
+      <form id="signup-form">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email address"
+          aria-label="Email address"
+          autocomplete="email"
+          required
+        >
 
-    <section>
-      <h2>Contact</h2>
-      <p>Contact information for TagTribe Labs will be available here.</p>
+        <button type="submit">
+          Join the List
+        </button>
+      </form>
+
+      <small class="signup-note" id="signup-message">
+        Email registration is coming soon.
+        We will never sell your email address.
+      </small>
     </section>
 
   </main>
 
   <footer>
-    &copy; 2026 TagTribe Labs. All rights reserved.
+    <p>
+      &copy; <span id="year"></span>
+      TagTribe Labs. All rights reserved.
+    </p>
+
+    <p>
+      <a href="https://tagtribe.app">
+        TagTribe.app
+      </a>
+    </p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("signup-form")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("signup-message")
+          .textContent =
+          "Email registration is not available yet. Please check back soon.";
+      });
+  </script>
 
 </body>
 </html>
